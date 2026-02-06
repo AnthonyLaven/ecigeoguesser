@@ -6,7 +6,7 @@
 ECI GeoGuessr is an interactive game inspired by the popular game GeoGuessr, but set within the boundaries of our school, ECI.
 The goal of the game is for players to explore the campus in a fun and interactive way by guessing the locations where photos were taken. Players are shown a random photograph from somewhere around the school and must click on a map to select where they think the photo was taken. The closer their guess is to the actual location, the higher the score they receive.
 
-Each game has 5 rounds, and after each guess, visual feedback is provided showing how accurate the player was and where the actual location is on the map. Since our school has multiple floors, each floor has its own seperate map, and players can use buttons on the side to select which floor they want to guess on. Guesses on the wrong floor will result in a score of 0 points, adding an extra challenge to the game.
+Each game has 5 rounds, and after each guess visual feedback is provided showing how accurate the player was and where the actual location is on the map. Since our school has multiple floors, each floor has its own seperate map, and players can use buttons on the side to select which floor they want to guess on. Guesses on the wrong floor will result in a score of 0 points, adding an extra challenge to the game.
 
 The game is built entirely with **HTML, CSS, and JavaScript**, making it accessible directly from any modern web browser. The user interface is very easy to use, with a minimalist design and a few simple buttons providing most of the functionality. All scoring logic, image selection, and rounds are handled by JavaScript within the browser.
 
