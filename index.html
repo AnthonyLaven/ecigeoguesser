@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+
+        <title>ECI Geoguessr</title>
+
+    </head>
+    <body>
+        <div id="round-num-and-points-box">
+            <h1 id="round-points-text">Round #<span id="round-placeholder">1</span> / 5 - <span id="score-placeholder">0</span> Points</h2>
+        </div>
+
+        <div id="after-guess-info" class="blurred-box">
+            <h1 id="km-away-text">Your guess was 0km away</h1>
+            <h3 id="points-text">You got 0 points</h3>
+            <button onclick="newRound()" id="next-round-button">Next Round</button>
+        </div>
+
+        <p id="test"></p>
+        <p id="distance"></p>
+        <p id="score"></p>
+
+        <div id="floor-buttons">
+            <button id="floor0" onclick="floor0()" class="floor-button">0</button>
+            <button id="floor1" onclick="floor1()" class="floor-button">1</button>
+            <button id="floor2" onclick="floor2()" class="floor-button">2</button>
+            <button id="floor3" onclick="floor3()" class="floor-button">3</button>
+        </div>
+
+
+        <div id="white-overlay"></div>
+        <div id="map-container">
+            <img src="images/Level1.png" class="map" id="schoolmap">
+        </div>
+
+        <button onclick="guess()" id="guess-button">Guess</button>
+
+        <!-- <button id="new-round" onclick="newRound()">New Round</button> -->
+
+        <img id="afterGuess" class="fullScreen">
+
+        <div id="dot-container"></div>
+
+
+
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
+
+

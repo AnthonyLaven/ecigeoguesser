@@ -1,0 +1,77 @@
+body{
+    background-image: url("schoolFront.jpg");
+    background-color: #cccccc; /* Background color in case the image fails to load */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire container */
+    background-position: center; /* Centers the image in the container */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling, creating a parallax effect */
+}
+
+#bg-overlay {
+    position: fixed;
+    inset: 0;                 /* top, right, bottom, left = 0 */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+.start-button {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 999px; /* fully rounded pill shape */
+
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.2s ease;
+}
+
+.title {
+    position: fixed;
+    top: 0vh;
+    left: 50%;       /* Aligns the left edge to the horizontal center */
+    transform: translateX(-50%);
+
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.sub-title {
+    position: fixed;
+  top: 23vh;
+  left: 50%;
+    transform: translateX(-50%);
+
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.rules{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: 'Playfair Display', Georgia, serif;
+    position: fixed;
+    top: 33vh;
+    left: 50%;
+    transform: translateX(-50%);
+}

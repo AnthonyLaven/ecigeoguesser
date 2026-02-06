@@ -1,0 +1,206 @@
+body{
+    background-image: url("schoolFront.jpg");
+    background-color: #cccccc; /* Background color in case the image fails to load */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire container */
+    background-position: center; /* Centers the image in the container */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling, creating a parallax effect */
+}
+
+#map-container {
+  z-index: 20;
+  border: 5px solid black;
+  position: fixed;
+  bottom: 0;
+  right: 4vw; /*0.5vw*/
+
+  width: 25vw;
+  height: auto;
+  opacity: 0.5;
+
+  transform-origin: bottom right; /* scale from corner */
+  transform: scale(1);
+  transition: /* transition controls how fast both the opacity and transform changes will be when transitioning INTO this version*/
+    transform 0.5s ease,  /* slow for fullscreen */
+    opacity 0.3s ease;  /* fast for hover */
+}
+
+#map-container:hover {
+  transform: scale(1.9); /* hover scale */
+  opacity: 1;
+  transition: /* transition controls how fast both the opacity and transform changes will be when transitioning INTO this version*/
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  cursor: pointer;
+
+}
+
+#map-container.active {
+  left: 50%;
+
+  /* top: 50%; */
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(2.5);
+
+  opacity: 1;
+  border: 0px solid black;
+
+  transition:
+    transform 0.5s ease,
+    opacity 0.3s ease;
+}
+
+#white-overlay{
+  z-index: 19;
+  opacity:0;
+  position: fixed;
+  background: white;
+  transition: opacity 0.8s ease;
+  top: 0px;
+  left: 0px;
+  width: 1000vh;
+  height: 1000vh;
+  pointer-events: none;
+}
+
+#white-overlay.active{
+  opacity: 1;
+}
+.map {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.waypoint {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+
+#round-num-and-points-box{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: white;
+  padding: 5px 10px;
+
+
+  z-index: 21;
+  background: green;
+  border-radius: 15px;
+}
+
+#after-guess-info{
+  display: none;
+  position: fixed;
+  padding: 20px;
+  bottom: 3vh;
+  left: 5vh;
+  width: 48vh;
+  border-radius: 20px;
+  text-align: center;
+  background: green;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);  /* Dark semi-transparent layer */
+  backdrop-filter: blur(10px); /*blurres the background behind the div*/
+  z-index: 22;
+}
+
+
+#after-guess-info.active{
+  display: block;
+}
+
+#guess-button {
+    position: fixed;
+    bottom: 2vh;
+    left: 2vw;
+
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 999px; /* fully rounded pill shape */
+
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.2s ease;
+}
+
+#guess-button:hover {
+    transform: translateY(-2px); /*make it go up 2 pixels so it looks a bit nicer */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45); /*give it a cool shadow*/
+}
+
+
+
+#floor-buttons{
+  position: fixed;
+  bottom: 4vh;
+  right: 0.5vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  z-index: 21;
+}
+
+.floor-button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+    border: none;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.floor-button:hover {
+    background: rgba(52, 152, 219, 0.18); /* soft blue tint */
+
+    transform: scale(1.05);
+}
+
+
+.container {
+    position: relative; /* sets the positioning context for absolute children */
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+.dot {
+    position: absolute; /* Positions the dot relative to its parent container */
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%; /* Makes the square div a circle */
+    /* Centers the dot exactly at the given x/y coordinates */
+    transform: translate(-50%, -50%);
+}

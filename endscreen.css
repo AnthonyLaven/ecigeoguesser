@@ -1,0 +1,66 @@
+.title {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 100px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.score-title {
+  color: white;
+  text-align: left;
+  font-weight: bold;
+  font-size: 75px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.background-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+
+  z-index: 1;
+}
+
+.end-screen {
+  position: relative;
+  z-index: 2; /* ABOVE blur */
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-align: center;
+}
+
+.guess-button {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 999px; /* fully rounded pill shape */
+
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.2s ease;
+}
